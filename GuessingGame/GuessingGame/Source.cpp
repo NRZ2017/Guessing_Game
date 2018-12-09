@@ -23,7 +23,7 @@ int main()
 			cout << "I generated a random number. Please guess what it is" << endl;
 			cin >> answer;
 
-			for (int i = 0; i < count+1; i++)
+			for (int i = 0; i < 10; i++)
 			{
 				if (answer < randomNum)
 				{
@@ -31,6 +31,7 @@ int main()
 					IsCorrect = false;
 					count++;
 					prevNum[i] = answer;
+					break;
 				}
 				else if (answer > randomNum)
 				{
@@ -38,6 +39,7 @@ int main()
 					IsCorrect = false;
 					count++;
 					prevNum[i] = answer;
+					break;
 				}
 				else
 				{
@@ -46,6 +48,7 @@ int main()
 					cout << "Correct. It took you " << count << " times to get the answer correct" << endl;
 					cout << "Here is your previous wrong answers: " << prevNum[i] << endl;
 					IsCorrect = true;
+					
 				}
 				system("PAUSE");
 			}
